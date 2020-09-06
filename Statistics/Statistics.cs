@@ -1,29 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using static Statistics.Stats;
 
 namespace Statistics
 {
     public class StatsComputer
     {
-        public Stats CalculateStatistics(List<double> numbers) {
+        public Stats CalculateStatistics(List<double> numbers)
+        {
             //Implement statistics here
-            Stats compute = new Stats();
-            if(numbers.Count == 0)
+            Stats calculator = new Stats();
+            if (numbers.Count > 0)
             {
-                compute.average = Double.NaN;
-                compute.max = Double.NaN;
-                compute.min = Double.NaN;
-
+                calculator.max = numbers.Max();
+                calculator.min = numbers.Min();
+                calculator.average = numbers.Average();
             }
             else
             {
-                compute.average = numbers.Average();
-                compute.min = numbers.Max();
-                compute.max = numbers.Min();
+                calculator.max = calculator.min = calculator.average = double.NaN;
             }
-            return compute;
+            return calculator;
         }
     }
 }
