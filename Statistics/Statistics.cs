@@ -18,8 +18,8 @@ namespace Statistics
             else
             {
                 compute.average = numbers.Average();
-                compute.max = numbers.Min();
                 compute.min = numbers.Max();
+                compute.max = numbers.Min();
             }
             return compute;
         }
