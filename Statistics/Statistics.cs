@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using static Statistics.Stats;
 
 namespace Statistics
 {
@@ -10,9 +12,9 @@ namespace Statistics
             Stats compute = new Stats();
             if(numbers.Count == 0)
             {
-                compute.average = double.NaN;
-                compute.max = double.NaN;
-                compute.min = double.NaN;
+                compute.average = Double.NaN;
+                compute.max = Double.NaN;
+                compute.min = Double.NaN;
 
             }
             else
