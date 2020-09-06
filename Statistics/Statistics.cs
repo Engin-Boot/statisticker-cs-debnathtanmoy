@@ -5,8 +5,23 @@ namespace Statistics
 {
     public class StatsComputer
     {
-        public Stats CalculateStatistics(List<float> numbers) {
+        public Stats CalculateStatistics(List<Double> numbers) {
             //Implement statistics here
+            Stats compute = new Stats();
+            if(numbers.Count == 0)
+            {
+                compute.average = Double.NaN;
+                compute.max = Double.NaN;
+                compute.min = Double.NaN;
+
+            }
+            else
+            {
+                compute.average = numbers.Average();
+                compute.max = numbers.Min();
+                compute.min = numbers.Max();
+            }
+            return compute;
         }
     }
 }
